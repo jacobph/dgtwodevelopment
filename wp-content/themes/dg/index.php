@@ -6,6 +6,13 @@
  */
 
 get_header(); // This fxn gets the header.php file and renders it ?>
+	<section class="hero-wrap">
+		<div class="container">
+			<div class="hero">
+				<h1>We are a creative consultancy</h1>
+			</div>
+		</div>
+	</section>
 	<div id="primary" class="row-fluid">
 		<div id="content" role="main" class="span8 offset2">
 
