@@ -1,0 +1,16 @@
+/* select color */
+::-moz-selection { /* Code for Firefox */
+    //color: red;
+    background: $red;
+}
+
+::selection {
+    //color: red; 
+    background: $red;
+}
+
+/* some stuff gets set on the body */
+body{
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background:$white;
+}

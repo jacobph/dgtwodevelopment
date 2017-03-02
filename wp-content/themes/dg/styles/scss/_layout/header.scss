@@ -1,0 +1,42 @@
+/* header */
+.site-header{
+  height: 80px; //not correct
+  background:$white;
+  // position:fixed;
+  // top:0;
+  // width:100%;
+
+  .container{
+    height:100%;
+  }
+}
+
+
+.site-header_contents{
+  justify-content: space-between;
+  align-items:center;
+  height:100%
+}
+
+.logo{
+  color:$red;
+  font-size: 40px; //not correct;
+  text-decoration:none;
+
+}
+
+/* site nav */
+.site-nav{
+  display:none;
+  position:absolute;
+  top:0;
+  left:0;
+  width:100vw;
+  height:100vh;
+  background: $black90;
+  color:$white;
+}
+
+body.nav-active .site-nav{
+  display:block;
+}

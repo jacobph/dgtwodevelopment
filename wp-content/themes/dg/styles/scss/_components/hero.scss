@@ -1,0 +1,30 @@
+/* home page hero section */
+.hero-wrap{
+  background-color: black;
+  height:calc(100vh - 80px);
+
+  .container {
+    height: 100%;
+  }
+}
+
+.hero {
+  height: 100%;
+  display: flex;
+  align-items: center;
+
+  h1{
+    color:$white;
+    font-size: $hero;
+    line-height:$line-height-1;
+    font-weight:$text-black;
+    position:relative;
+    display:inline;
+  }
+  .cursor {
+      animation: cursor 2s linear infinite;
+    }
+}
+@keyframes cursor {  
+  50% { opacity: 0; }
+}

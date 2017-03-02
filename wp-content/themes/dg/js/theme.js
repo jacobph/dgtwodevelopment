@@ -1,1 +1,1 @@
-"use strict";
+var let 'ads'kfsd;

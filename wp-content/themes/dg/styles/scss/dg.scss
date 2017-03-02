@@ -1,90 +1,10 @@
-/* variables */
+// Importing all stylesheets for 404 Page
 
-//colors
-$black: #000000;
-$white: #ffffff;
-$red: #EF493E;
+@import "_helpers/reset.scss";
+@import "_helpers/variables.scss";
+@import "_layout/misc.scss";
+@import "_layout/header.scss";
+@import "_layout/footer.scss";
 
-$black90:rgba(0,0,0,0.9);
+@import "_components/hero.scss";
 
-//font sizes
-$hero: 80pt;
-
-//font weights
-$font-normal: 400;
-$font-bold: 700;
-$text-black: 900;
-
-//line heights
-$line-height-low:0.9em;
-$line-height-1: 1.0em;
-$line-height-high:1.2em;
-
-
-/* some stuff gets set on the body */
-body{
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background:$white;
-}
-
-/* header */
-.site-header{
-  height: 80px; //not correct
-  background:$white;
-  position:fixed;
-  top:0;
-  width:100%;
-
-  .container{
-    height:100%;
-  }
-}
-
-
-.site-header_contents{
-  justify-content: space-between;
-  align-items:center;
-  height:100%
-}
-
-.logo{
-  color:$red;
-  font-size: 40px; //not correct;
-  text-decoration:none;
-
-}
-
-/* site nav */
-.site-nav{
-  display:none;
-  position:absolute;
-  top:0;
-  left:0;
-  width:100vw;
-  height:100vh;
-  background: $black90;
-  color:$white;
-}
-
-body.nav-active .site-nav{
-  display:block;
-}
-
-/* footer */
-
-/* home page hero section */
-.hero-wrap{
-  background-color: black;
-  height:100vh;
-}
-
-.hero{
-  padding: 120px 0; //not correct
-
-  h1{
-    color:$white;
-    font-size: $hero;
-    line-height:$line-height-low;
-    font-weight:$black;
-  }
-}
