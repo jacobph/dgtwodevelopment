@@ -8,15 +8,13 @@
 </main><!-- / end page container, begun in the header -->
 
 <footer class="site-footer">
-	<div class="site-info container">
-		
-		<p>Birthed <a href="http://bckmn.com/naked-wordpress" rel="theme">Naked</a> 
-			on <a href="http://wordpress.org" rel="generator">Wordpress</a> 
-			by <a href="http://bckmn.com" rel="designer">Joshua Beckman</a>
-		</p>
-		
-	</div><!-- .site-info -->
-</footer><!-- #colophon .site-footer -->
+	<div class="container">
+		<nav class="site-footer__site-nav">
+			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); // Display the user-defined menu in Appearance > Menus ?>
+		</nav>
+
+	</div><!-- .container -->
+</footer><!-- .site-footer -->
 
 <?php wp_footer(); 
 // This fxn allows plugins to insert themselves/scripts/css/files (right here) into the footer of your website. 

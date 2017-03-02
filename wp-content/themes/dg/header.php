@@ -46,13 +46,19 @@
 
 <header class="site-header">
 	<div class="container">
-		<div class="row site-header_contents">
-			<a class="logo" href="<?php echo esc_url( home_url( '/' ) ); // Link to the home page ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); // Title it with the blog name ?>" rel="home">
+		<div class="row site-header__contents">
+			<a class="site-header__logo" href="<?php echo esc_url( home_url( '/' ) ); // Link to the home page ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); // Title it with the blog name ?>" rel="home">
 				Donovan/Green
 			</a>
-			<div class="hamburger js_launch-nav"></div>
-			<nav class="site-nav main-nav">
-				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); // Display the user-defined menu in Appearance > Menus ?>
+			<div class="site-header__hamburger js_toggle-nav">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+			<nav class="site-header__site-nav main-nav">
+				<div class="container">
+					<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); // Display the user-defined menu in Appearance > Menus ?>
+				</div>
 			</nav>
 		</div> <!-- .row.site-header_contents -->
 	</div><!-- .container -->

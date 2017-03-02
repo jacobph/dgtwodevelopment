@@ -1,7 +1,7 @@
 /* home page hero section */
 .hero-wrap{
   background-color: black;
-  height:calc(100vh - 80px);
+  height:calc(100vh - 70px);
 
   .container {
     height: 100%;
@@ -13,15 +13,18 @@
   display: flex;
   align-items: center;
 
-  h1{
+  .hero__h1{
     color:$white;
-    font-size: $hero;
+    font-size: $font-xl;
     line-height:$line-height-1;
-    font-weight:$text-black;
+    font-weight:$weight-black;
     position:relative;
     display:inline;
   }
-  .cursor {
+  .hero__h1_typewriter-text{
+
+  }
+  .hero_h1__cursor {
       animation: cursor 2s linear infinite;
     }
 }

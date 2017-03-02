@@ -9,8 +9,9 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 	<section class="hero-wrap">
 		<div class="container">
 			<div class="hero">
-			  <h1 class="heroH1 js_typewrite" class="typewrite" data-period="2000" data-type='[ "We are a creative consultancy", "We are a creative incubator", "We are a creative partner for  CEOs and their organizations", "We build design  driven solutions  that launch new  business, products, channels & services" ]'>
-			    <span class="wrap"></span>
+			  <h1 class="hero__h1 js_typewrite typewrite" data-period="2000" data-type='[ "We are a creative consultancy", "We are a creative incubator", "We are a creative partner for  CEOs and their organizations", "We build design  driven solutions  that launch new  business, products, channels & services" ]'>
+			  	<span class="hero__h1__typewriter-text">We build design driven solutions that launch new business, products, channels & services
+</span><span class="hero__h1_cursor"></span>
 			  </h1>
 			</div>
 		</div>
