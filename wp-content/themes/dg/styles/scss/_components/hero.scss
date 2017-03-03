@@ -1,7 +1,11 @@
 /* home page hero section */
 .hero-wrap{
-  background-color:$black;
+  background-color: $black;
   height: calc(100vh - #{$header-height}); //have to interpolate SCSS vars to make them work in calc()
+
+  @media (min-width:$bp-m){
+    min-height: 680px;
+  }
 
   .container {
     height: 100%;
@@ -10,16 +14,30 @@
 
 .hero {
   height: 100%;
-  padding: 110px 0 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  position:relative;
+
+  @media (min-width: $bp-s){
+    // display:block;
+    // padding: 110px 0 0 0;
+  }
 }
 
 .hero__h1{
+  width: 100%;
   color: $white;
-  font-size: $font-size-m;
+  font-size: $font-size-s;
   line-height: $line-height-1;
   font-weight: $weight-black;
   position: relative;
   display: inline;
+
+  @media (min-width:$bp-s){
+    font-size: $font-size-m;
+  }
 
   @media (min-width:$bp-m){
     font-size: $font-size-l;
@@ -35,11 +53,12 @@
 
 .hero__arrow-down{
   display: flex;
-  position: absolute;
-  bottom: 20px;
   left: 0;
   width: 100%;
+  align-self: flex-end;
   justify-content: center;
+  position: absolute;
+  bottom: 20px;
 
   a{
     padding:20px 40px;

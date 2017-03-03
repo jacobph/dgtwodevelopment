@@ -2,6 +2,8 @@
 
 // breakpoints, declared here AND in grid.scss, since we run the sass compiler before we concat dg.scss & grid.scss'
 //if you need to change them, change them in both places.
+
+$bp-xs: 361px; //galaxy Sx line is all 360, iphone 5 and back are under this, lots of smaller android devices, etc
 $bp-s: 490px;
 $bp-m: 768px;
 $bp-l: 992px;
@@ -18,7 +20,7 @@ $font-size-2xl: 95pt;
 $font-size-xl: 70pt;
 $font-size-l: 56pt;
 $font-size-m: 36pt;
-$font-size-s: 24pt;
+$font-size-s: 26pt;
 $font-logo: 24pt;
 
 //font weights
