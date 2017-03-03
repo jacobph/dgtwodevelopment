@@ -14,6 +14,10 @@
 	<?php is_front_page() ? bloginfo('description') : wp_title(''); // if we're on the home page, show the description, from the site's settings - otherwise, show the title of the post or page ?>
 </title>
 
+<!-- development only -->
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <?php // We are loading our theme directory style.css by queuing scripts in our functions.php file, 
@@ -48,7 +52,8 @@
 	<div class="container">
 		<div class="row site-header__contents">
 			<a class="site-header__logo" href="<?php echo esc_url( home_url( '/' ) ); // Link to the home page ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); // Title it with the blog name ?>" rel="home">
-				Donovan/Green
+				<img class="img-responsive site-header__logo__img" src="<?php echo get_template_directory_uri(); ?>/img/DG_Logo_102816.svg" alt="Donovan/Green">
+				<!-- Donovan/Green -->
 			</a>
 			<div class="site-header__hamburger js_toggle-nav">
 				<span></span>

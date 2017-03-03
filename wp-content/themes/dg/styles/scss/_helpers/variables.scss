@@ -1,15 +1,24 @@
 /* variables */
 
+// breakpoints, declared here AND in grid.scss, since we run the sass compiler before we concat dg.scss & grid.scss'
+//if you need to change them, change them in both places.
+$bp-s: 490px;
+$bp-m: 768px;
+$bp-l: 992px;
+$bp-xl: 1252px;
+
 //colors
 $black: #000000;
 $white: #ffffff;
-$red: #EF493E;
+$red: rgb(240,73, 62); 
 $black90:rgba(0,0,0,0.9);
 
 //font-sizes
-$font-xl: 95pt;
-$font-l: 58pt;
-$font-m: 24pt;
+$font-size-2xl: 95pt;
+$font-size-xl: 70pt;
+$font-size-l: 56pt;
+$font-size-m: 36pt;
+$font-size-s: 24pt;
 $font-logo: 24pt;
 
 //font weights
@@ -22,3 +31,6 @@ $weight-black: 900;
 $line-height-low:0.9em;
 $line-height-1: 1.0em;
 $line-height-high:1.2em;
+
+//header height
+$header-height: 70px;

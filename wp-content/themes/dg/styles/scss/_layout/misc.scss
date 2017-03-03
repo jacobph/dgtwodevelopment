@@ -1,11 +1,9 @@
 /* select color */
-::-moz-selection { /* Code for Firefox */
-    //color: red;
+::-moz-selection { 
     background: $red;
 }
 
 ::selection {
-    //color: red; 
     background: $red;
 }
 
@@ -14,4 +12,11 @@ body{
   //font-family: "Roboto", Helvetica, Arial, sans-serif;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
   background:$white;
+  width:100%; //necessary to make body.nav-active behave properly, see hero.scss
+}
+
+.img-responsive{
+  max-width:100%;
+  margin-left:auto;
+  margin-right:auto;
 }

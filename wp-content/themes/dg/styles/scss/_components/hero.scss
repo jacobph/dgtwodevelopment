@@ -1,7 +1,7 @@
 /* home page hero section */
 .hero-wrap{
-  background-color: black;
-  height:calc(100vh - 70px);
+  background-color:$black;
+  height: calc(100vh - #{$header-height}); //have to interpolate SCSS vars to make them work in calc()
 
   .container {
     height: 100%;
@@ -10,24 +10,60 @@
 
 .hero {
   height: 100%;
+  padding: 110px 0 0 0;
+}
+
+.hero__h1{
+  color: $white;
+  font-size: $font-size-m;
+  line-height: $line-height-1;
+  font-weight: $weight-black;
+  position: relative;
+  display: inline;
+
+  @media (min-width:$bp-m){
+    font-size: $font-size-l;
+  }
+
+  @media (min-width:$bp-l){
+    font-size: $font-size-xl;
+  }
+  @media (min-width:$bp-xl){
+    font-size: $font-size-2xl;
+  }
+}
+
+.hero__arrow-down{
   display: flex;
-  align-items: center;
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
+  justify-content: center;
 
-  .hero__h1{
-    color:$white;
-    font-size: $font-xl;
-    line-height:$line-height-1;
-    font-weight:$weight-black;
-    position:relative;
-    display:inline;
-  }
-  .hero__h1_typewriter-text{
+  a{
+    padding:20px 40px;
+    display: block;
+    text-decoration: none;
+    transition: transform 0.2s ease;
 
-  }
-  .hero_h1__cursor {
-      animation: cursor 2s linear infinite;
+    &:hover img {
+      // opacity: 0.8;
+      // transform: translateY(4px);
+      animation: bounce 1s infinite;
     }
+  }
 }
-@keyframes cursor {  
-  50% { opacity: 0; }
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(3px);
+  }
+  // 85%{
+  //   transform: translateY(-2px);
+  // }
 }
+

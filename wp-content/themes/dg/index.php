@@ -13,6 +13,11 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 			  	<span class="hero__h1__typewriter-text">We build design driven solutions that launch new business, products, channels & services
 </span><span class="hero__h1_cursor"></span>
 			  </h1>
+			  <div class="hero__arrow-down">
+			  	<a href="#primary">
+			  		<img class="img-responsive" alt="Scroll Down" src="<?php echo get_template_directory_uri(); ?>/img/arrow.png" >
+			  	</a>
+			  </div>
 			</div>
 		</div>
 	</section>

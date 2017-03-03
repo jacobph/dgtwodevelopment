@@ -17,7 +17,6 @@ gulp.task('styles', function() {
         .pipe(minifyCSS({compatibility: 'ie8'}))
         .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9'))
         .pipe(concat('dg.min.css'))
-
         .pipe(gulp.dest('styles/min/'))
 });
 

@@ -8,6 +8,9 @@ Don't like these breakpoints? change them to suit your needs!
 // $bp-l: 62em;
 // $bp-xl: 75em;
 
+// declared here AND in grid.scss, since we run the sass compiler before we concat dg.scss & grid.scss'
+//if you need to change them, change them in both places.
+
 $bp-s: 490px;
 $bp-m: 768px;
 $bp-l: 992px;
@@ -24,8 +27,8 @@ $gutter: 23px;
 /* containers, like in every other css framework. Fixed width and fluid. */
 .container{
   margin:0 auto;
-  padding-left:1vw;
-  padding-right:1vw;
+  padding-left:15px;
+  padding-right:15px;
   max-width:100%;
   @media (min-width:$bp-s){
     max-width:$bp-s;

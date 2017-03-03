@@ -1,6 +1,6 @@
 /* header */
 .site-header{
-  height: 70px;
+  height: $header-height;
   background:$white;
 
   .container{
@@ -19,4 +19,6 @@
   font-size: $font-logo; 
   font-weight:$weight-bold;
   text-decoration:none;
+  display: block;
+  max-width: 200px;
 }
