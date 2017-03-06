@@ -33,17 +33,22 @@
 
   .menu-menu-1-container{
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
   }
 
   ul.menu {
     max-height:100%;
-    height: 630px; //this is the height of the large possible variation of the h1 element. sort of a magic number situation. sorry
+    padding-top:30px;
+    // height: 630px; //this is the height of the large possible variation of the h1 element. sort of a magic number situation. sorry
     display: flex; 
     flex-direction: column;
     align-items: flex-start;
+
+    @media (min-width: $bp-m){
+      padding-top:70px;
+    }
 
     li {
       width: 100%;
@@ -65,14 +70,31 @@
 
       a{
         display:block;
-        font-size: $font-size-l;
+        font-size: $font-size-s;
         font-weight: $weight-bold;
         color: $white;
         text-decoration: none;
         /* only for animated nav toggle function */
         //transition: color 0.1s ease;
 
+        @media (min-width:$bp-s){
+          font-size: $font-size-m;
+        }
+
         @media (min-width:$bp-m){
+          font-size: $font-size-l;
+        }
+
+        @media (min-width:$bp-l){
+          font-size: $font-size-xl;
+        }
+
+        @media (min-width:$bp-xl){
+          //no change here, hero and nav only size their fonts up at $bp-2xl
+        }
+
+        //1300px and larger
+        @media (min-width:$bp-2xl){
           font-size: $font-size-2xl;
         }
 

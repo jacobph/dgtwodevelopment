@@ -3,10 +3,6 @@
   background-color: $black;
   height: calc(100vh - #{$header-height}); //have to interpolate SCSS vars to make them work in calc()
 
-  @media (min-width:$bp-m){
-    min-height: 680px;
-  }
-
   .container {
     height: 100%;
   }
@@ -14,10 +10,11 @@
 
 .hero {
   height: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+
+  // display: flex;
+  // flex-wrap: wrap;
+  // justify-content: center;
+  // align-items: center;
   position:relative;
 
   @media (min-width: $bp-s){
@@ -33,7 +30,9 @@
   line-height: $line-height-1;
   font-weight: $weight-black;
   position: relative;
-  display: inline;
+  display: inline-block;
+  padding-top:30px;
+
 
   @media (min-width:$bp-s){
     font-size: $font-size-m;
@@ -41,12 +40,20 @@
 
   @media (min-width:$bp-m){
     font-size: $font-size-l;
+    padding-top:70px;
+
   }
 
   @media (min-width:$bp-l){
     font-size: $font-size-xl;
   }
+
   @media (min-width:$bp-xl){
+    //no change here
+  }
+
+  //1300px and larger
+  @media (min-width:$bp-2xl){
     font-size: $font-size-2xl;
   }
 }
