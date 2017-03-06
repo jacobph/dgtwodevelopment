@@ -67,9 +67,9 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 					<div class="portfolio__row port-row-1-1-1">
 				<?php endif; ?>
 					
-						<a href="<?php the_permalink(); // Get the link to this post ?>" title="<?php the_title(); ?>" class="portfolio__item portfolio-item" style="background-image:url(<?php the_post_thumbnail_url(); ?>)">
+						<a href="<?php the_permalink(); // Get the link to this post ?>" title="<?php the_title(); ?>" class="portfolio__item portfolio-item" style="background-image:url(<?php the_post_thumbnail_url('large'); ?>)">
 							<h1 class="portfolio-item__title">
-								<?php the_title(); // Show the title of the posts as a link ?>
+								<span><?php the_title(); // Show the title of the posts as a link ?></span>
 							</h1>
 						</a> <!-- .portfolio-item -->
 
