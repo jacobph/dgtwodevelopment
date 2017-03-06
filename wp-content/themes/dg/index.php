@@ -9,9 +9,8 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 	<section class="hero-wrap js_hero-wrap">
 		<div class="container">
 			<div class="hero">
-			  <h1 class="hero__h1 js_typewrite typewrite" data-period="2000">
-			  	<span class="hero__h1__typewriter-text">We build design driven solutions that launch new business, products, channels & services
-</span><span class="hero__h1_cursor"></span>
+			  <h1 class="hero__h1 typewrite">
+			  	<span class="js_typewrite">We build design driven solutions that launch new business, products, channels &amp; services</span>
 			  </h1>
 			  <div class="hero__arrow-down">
 			  	<a href="#primary">

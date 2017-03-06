@@ -83,4 +83,18 @@ function toggleNav(){
   
   setHeroHeight();
 
+  //only using jquery for this, might be better to re-write it if page load speed becomes an issue
+  jQuery(document).ready(function(){
+    jQuery(".js_typewrite").typed({
+      //if these strings change, line 280 in typed.js needs to be updated as well
+      strings: [ "We are a creative consultancy ^4000","We are a creative incubator ^4000","We are a creative partner for  CEOs and their organizations ^5000","We build design driven solutions  that launch new  business, products, channels &amp; services ^6000"],
+      contentType: 'html', //need this b/c of the ampersand in the 4th string
+      typeSpeed: 30,
+      loop :true,
+      showCursor: false,
+      //cursorChar: "|",
+    });
+  })
+  
+
 }())

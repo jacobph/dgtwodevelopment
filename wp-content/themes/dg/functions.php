@@ -84,7 +84,9 @@ add_action( 'wp_enqueue_scripts', 'dg_styles' ); // Register this fxn and allow 
 //scripts
 function naked_scripts()  { 
 	// add theme scripts
-    //wp_enqueue_script( 'jquery', get_template_directory_uri() . 'js/jquery-3.0.0.js#asyncload', array(), NAKED_VERSION, true );
+  //jQuery & typed.js
+  wp_enqueue_script( 'jquery', get_template_directory_uri() . '/js/jquery-3.0.0.js', array(), NAKED_VERSION, true );
+  wp_enqueue_script( 'typedjs', get_template_directory_uri() . '/js/typed.js', array(), NAKED_VERSION, true );
 	
 	// add fitvid
 	//wp_enqueue_script( 'naked-fitvid', get_template_directory_uri() . '/js/jquery.fitvids.js', array( 'jquery' ), NAKED_VERSION, true );
@@ -94,7 +96,7 @@ function naked_scripts()  {
 	
 
 	// add theme scripts
-    wp_enqueue_script( 'theme', get_template_directory_uri() . '/js/min/theme.min.js#asyncload', array(), NAKED_VERSION, true );
+  wp_enqueue_script( 'theme', get_template_directory_uri() . '/js/min/theme.min.js', array(), NAKED_VERSION, true );
   
 }
 add_action( 'wp_enqueue_scripts', 'naked_scripts' ); // Register this fxn and allow Wordpress to call it automatcally in the header
