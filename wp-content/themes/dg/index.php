@@ -20,63 +20,64 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 			</div>
 		</div>
 	</section>
-	<div id="primary" class="row-fluid">
-		<div id="content" role="main" class="span8 offset2">
+	<section id="primary" class="portfolio" role="main">
+		<div class="container">
 
+		  <?php 
+				$args = array(
+					'cat' => 1,
+					// 'posts_per_page' => 3
+				);
+				$the_query = new WP_Query( $args );
+			?>
 			<?php if ( have_posts() ) : 
 			// Do we have any posts in the databse that match our query?
 			// In the case of the home page, this will call for the most recent posts 
 			?>
 
-				<?php while ( have_posts() ) : the_post(); 
-				// If we have some posts to show, start a loop that will display each one the same way
+				<?php
+				$i = 0; //set our counter to zero
+				while (have_posts() && $i < 20) : the_post(); 
+				// If we have some posts to show, start a loop that will display each one the same way. top 20 posts only
 				?>
 
-					<article class="post">
+
+				<?php if ($i === 0): //the alternating masonry rows ?>
+					<div class="portfolio__row port-row-2-1">
+				<?php elseif ($i === 2): ?>
+					</div>
+					<div class="portfolio__row port-row-1-1-1">
+				<?php elseif ($i === 5): ?>
+					</div>
+					<div class="portfolio__row port-row-1-2">
+				<?php elseif ($i === 7): ?>
+					</div>
+					<div class="portfolio__row port-row-1-1-1">
+				<?php elseif ($i === 10): ?>
+					</div>
+					<div class="portfolio__row port-row-2-1">
+				<?php elseif ($i === 12): ?>
+					</div>
+					<div class="portfolio__row port-row-1-1-1">
+				<?php elseif ($i === 15): ?>
+					</div>
+					<div class="portfolio__row port-row-1-2">
+				<?php elseif ($i === 17): ?>
+					</div>
+					<div class="portfolio__row port-row-1-1-1">
+				<?php endif; ?>
 					
-						<h1 class="title">
-							<a href="<?php the_permalink(); // Get the link to this post ?>" title="<?php the_title(); ?>">
+						<a href="<?php the_permalink(); // Get the link to this post ?>" title="<?php the_title(); ?>" class="portfolio__item portfolio-item" style="background-image:url(<?php the_post_thumbnail_url(); ?>)">
+							<h1 class="portfolio-item__title">
 								<?php the_title(); // Show the title of the posts as a link ?>
-							</a>
-						</h1>
-						<div class="post-meta">
-							<?php the_time('m/d/Y'); // Display the time published ?> | 
-							<?php if( comments_open() ) : // If we have comments open on this post, display a link and count of them ?>
-								<span class="comments-link">
-									<?php comments_popup_link( __( 'Comment', 'break' ), __( '1 Comment', 'break' ), __( '% Comments', 'break' ) ); 
-									// Display the comment count with the applicable pluralization
-									?>
-								</span>
-							<?php endif; ?>
-						
-						</div><!--/post-meta -->
-						
-						<div class="the-content">
-							<?php the_content( 'Continue...' ); 
-							// This call the main content of the post, the stuff in the main text box while composing.
-							// This will wrap everything in p tags and show a link as 'Continue...' where/if the
-							// author inserted a <!-- more --> link in the post body
-							?>
-							
-							<?php wp_link_pages(); // This will display pagination links, if applicable to the post ?>
-						</div><!-- the-content -->
-		
-						<div class="meta clearfix">
-							<div class="category"><?php echo get_the_category_list(); // Display the categories this post belongs to, as links ?></div>
-							<div class="tags"><?php echo get_the_tag_list( '| &nbsp;', '&nbsp;' ); // Display the tags this post has, as links separated by spaces and pipes ?></div>
-						</div><!-- Meta -->
-						
-					</article>
+							</h1>
+						</a> <!-- .portfolio-item -->
 
-				<?php endwhile; // OK, let's stop the posts loop once we've exhausted our query/number of posts ?>
-				
-				<!-- pagintation -->
-				<div id="pagination" class="clearfix">
-					<div class="past-page"><?php previous_posts_link( 'newer' ); // Display a link to  newer posts, if there are any, with the text 'newer' ?></div>
-					<div class="next-page"><?php next_posts_link( 'older' ); // Display a link to  older posts, if there are any, with the text 'older' ?></div>
-				</div><!-- pagination -->
+					<?php if ($i === 19): ?>
+						</div>
+					<?php endif; ?>
 
-
+				<?php $i++; endwhile; // OK, let's stop the posts loop once we've exhausted our query/number of posts ?>
 			<?php else : // Well, if there are no posts to display and loop through, let's apologize to the reader (also your 404 error) ?>
 				
 				<article class="post error">
@@ -84,6 +85,7 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 				</article>
 
 			<?php endif; // OK, I think that takes care of both scenarios (having posts or not having any posts) ?>
-		</div><!-- #content .site-content -->
-	</div><!-- #primary .content-area -->
+			<?php wp_reset_query(); //reset the query, since we did some stuff on line 26 ?> 
+		</div><!-- .container -->
+	</section><!-- .portfolio -->
 <?php get_footer(); // This fxn gets the footer.php file and renders it ?>

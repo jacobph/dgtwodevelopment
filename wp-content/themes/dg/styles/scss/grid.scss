@@ -28,8 +28,6 @@ $gutter: 23px;
 /* containers, like in every other css framework. Fixed width and fluid. */
 .container{
   margin: 0 auto;
-  padding-left: 15px;
-  padding-right: 15px;
   max-width: 100%;
   @media (min-width: $bp-s){
     max-width: $bp-s;
