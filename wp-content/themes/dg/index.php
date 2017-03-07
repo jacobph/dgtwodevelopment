@@ -22,6 +22,7 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 	</section>
 	<section id="primary" class="portfolio" role="main">
 		<div class="container">
+			<div class="row">
 
 		  <?php 
 				$args = array(
@@ -42,7 +43,7 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 				?>
 
 
-				<?php if ($i === 0): //the alternating masonry rows ?>
+				<!-- <?php if ($i === 0): //the alternating masonry rows ?>
 					<div class="portfolio__row port-row-2-1">
 				<?php elseif ($i === 2): ?>
 					</div>
@@ -65,7 +66,7 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 				<?php elseif ($i === 17): ?>
 					</div>
 					<div class="portfolio__row port-row-1-1-1">
-				<?php endif; ?>
+				<?php endif; ?> -->
 					
 						<a href="<?php the_permalink(); // Get the link to this post ?>" title="<?php the_title(); ?>" class="portfolio__item portfolio-item" style="background-image:url(<?php the_post_thumbnail_url('large'); ?>)">
 							<h1 class="portfolio-item__title">
@@ -73,9 +74,9 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 							</h1>
 						</a> <!-- .portfolio-item -->
 
-					<?php if ($i === 19): ?>
+					<!-- <?php if ($i === 19): ?>
 						</div>
-					<?php endif; ?>
+					<?php endif; ?> -->
 
 				<?php $i++; endwhile; // OK, let's stop the posts loop once we've exhausted our query/number of posts ?>
 			<?php else : // Well, if there are no posts to display and loop through, let's apologize to the reader (also your 404 error) ?>
@@ -86,6 +87,7 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 
 			<?php endif; // OK, I think that takes care of both scenarios (having posts or not having any posts) ?>
 			<?php wp_reset_query(); //reset the query, since we did some stuff on line 26 ?> 
+			</div> <!-- .row -->
 		</div><!-- .container -->
 	</section><!-- .portfolio -->
 <?php get_footer(); // This fxn gets the footer.php file and renders it ?>

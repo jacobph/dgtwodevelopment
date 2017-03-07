@@ -2,7 +2,6 @@
 .hero-wrap{
   background-color: $black;
   height: calc(100vh - #{$header-height}); //have to interpolate SCSS vars to make them work in calc()
-  margin-bottom:22px;
 
   .container {
     height: 100%;
