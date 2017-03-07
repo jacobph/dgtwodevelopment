@@ -86,7 +86,7 @@ function naked_scripts()  {
 	// add theme scripts
   //jQuery & typed.js
   wp_enqueue_script( 'jquery', get_template_directory_uri() . '/js/jquery-3.0.0.js', array(), NAKED_VERSION, true );
-  wp_enqueue_script( 'typedjs', get_template_directory_uri() . '/js/typed.js', array(), NAKED_VERSION, true );
+  wp_enqueue_script( 'typedjs', get_template_directory_uri() . '/js/min/typed.min.js', array(), NAKED_VERSION, true );
 	
 	// add fitvid
 	//wp_enqueue_script( 'naked-fitvid', get_template_directory_uri() . '/js/jquery.fitvids.js', array( 'jquery' ), NAKED_VERSION, true );
