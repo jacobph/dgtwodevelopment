@@ -20,11 +20,11 @@
   }
 }
 .site-header__site-nav{
-  position:absolute;
+  position:fixed;
   top: -5000px;
   right: 0;
   width: 100%;
-  height: calc(100vh - #{$header-height}); //have to interpolate SCSS vars to make them work in calc()
+  height: calc(100vh + 30px); //extra height b/c view height on mobile changes as the address bar appears/dissapears
   opacity: 0;
   background: $black90;
   color: $white;
@@ -119,8 +119,7 @@
 
 /* active state */
 body.nav-active {
-  position: fixed;
-  overflow-y:scroll;
+  overflow:hidden;
 
   .site-header__site-nav{
     top:$header-height;

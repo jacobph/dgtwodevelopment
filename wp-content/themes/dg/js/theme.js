@@ -14,10 +14,56 @@ function setHeroHeight(){
 
 function escapeNav(e) {
   var keyCode = e.keyCode;
-  if(keyCode==27) {
+  if(keyCode === 27) {
     toggleNav();
   }    
 }
+
+//boilerplate debounce function, use when you don't want to fire an event to often
+//like if you're attaching an event to scroll
+//wait is time in ms, pass 15 normally
+//immediate is bool, pass true normally
+function debounce(func, wait, immediate) {
+  var timeout;
+  return function() {
+    var context = this, args = arguments;
+    var later = function() {
+      timeout = null;
+      if (!immediate) func.apply(context, args);
+    };
+    var callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) func.apply(context, args);
+  }
+}
+
+//sticky the nav on scroll up, un-sticky it on scroll down
+//const navHeight = document.querySelector('.js_site-header').offsetHeight;
+var lastScrollTop = window.pageYOffset;
+var header = document.querySelector('.js_site-header'); 
+//var headerHeight = document.querySelector('.js_site-header');
+function fixHeader(){
+  var st = window.pageYOffset || document.documentElement.scrollTop; 
+
+  var isDown = header.classList.contains('down');
+  console.log(isDown);
+
+  if (st > lastScrollTop && isDown){
+     // downscroll code
+     console.log('going down');
+     header.classList.remove('down');
+     header.classList.remove('fixed');
+  } else if(st < lastScrollTop && !isDown) {
+    // upscroll code
+    console.log('going up');
+    header.classList.add('fixed');
+    header.classList.add('down');
+  }
+  lastScrollTop = st;
+}
+window.addEventListener('scroll', debounce(fixHeader, 15, true));
+
 
 // function toggleNav(){
 //   //toggle active state on hamburger button

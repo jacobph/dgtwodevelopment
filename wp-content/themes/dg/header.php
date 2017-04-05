@@ -48,7 +48,7 @@
 	?>
 >
 
-<header class="site-header">
+<header class="site-header js_site-header">
 	<div class="container">
 		<div class="row site-header__contents">
 			<a class="site-header__logo" href="<?php echo esc_url( home_url( '/' ) ); // Link to the home page ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); // Title it with the blog name ?>" rel="home">
